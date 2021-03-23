@@ -5,7 +5,7 @@ sys.path.append("Modules")
 
 from Modules import license_input
 from Modules import exit_with_q_module
-from Modules import primality_tester_modular
+from Modules import primality_tester_impl
 
 #   Purpose and version of program
 __purpose__ = "This program utilizes Miller's test to find whether a number is prime (with a probalistic chance of error) and to determine whether a number is not prime (with absolute certainty)."
@@ -51,7 +51,7 @@ def interface():
     elif coprime_sample == "q":
         exit_with_q_module.quit_program()
     else:
-        primality_tester_modular.primality_tester(
+        primality_tester_impl.primality_tester(
             show_details, prime_input, coprime_sample
         )
     interface()
