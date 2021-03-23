@@ -3,9 +3,9 @@ import sys
 
 sys.path.append("Modules")
 
-import license_input
-from exit_with_q_module import quit_program
-import primality_tester_modular
+from Modules import license_input
+from Modules import exit_with_q_module
+from Modules import primality_tester_modular
 
 #   Purpose and version of program
 __purpose__ = "This program utilizes Miller's test to find whether a number is prime (with a probalistic chance of error) and to determine whether a number is not prime (with absolute certainty)."
@@ -39,7 +39,7 @@ def interface():
             % list_of_found_primes
         )
     elif prime_input == "q":
-        quit_program()
+        exit_with_q_module.quit_program()
     coprime_sample = input(
         "Input the strength of the test (1 = decent chance of error, 4+ very unlikely to have any chance of error) the larger the input, the longer the computation will take: "
     )
@@ -49,7 +49,7 @@ def interface():
             % list_of_found_primes
         )
     elif coprime_sample == "q":
-        quit_program()
+        exit_with_q_module.quit_program()
     else:
         primality_tester_modular.primality_tester(
             show_details, prime_input, coprime_sample
